@@ -27,6 +27,16 @@ const MovieImage = styled.img`
     margin-top: 0.5vw;
 `;
 
+const MovieInfo = styled.div`
+    width: 100%;
+    min-height: 5%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.8vw;
+    cursor: pointer;
+`;
+
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 const Movie = () => {
@@ -50,6 +60,12 @@ const Movie = () => {
                     onClick={() => handleMovieClick(movie.title, `${IMG_BASE_URL}${movie.poster_path}`, movie.vote_average, movie.overview)}
                 >
                     <MovieImage src={`${IMG_BASE_URL}${movie.poster_path}`} alt={movie.title} />
+                    
+                    <MovieInfo>
+                        <p id="movieTitle" style={{ paddingLeft: "0.5vw" }}>{movie.title}</p>
+                        <p id="movieVote" style={{ paddingRight: "0.5vw" }}>{movie.vote_average}</p>
+                    </MovieInfo>
+                
                 </MovieContainer>
             ))}
         </Container>

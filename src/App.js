@@ -10,7 +10,6 @@ import MovieDetail from "./pages/MovieDetail";
 function App() {
   return (
     <Router>
-      <div style={{ backgroundColor: 'white', height: '100vh', minHeight: '100vh' }}> {/* 배경색을 설정하고 높이를 100%로 설정 */}
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,7 +19,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/movie/:title" element={<MovieDetail />} />
         </Routes>
-      </div>
     </Router>
   );
 }

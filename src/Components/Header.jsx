@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginControl from './LoginControl';
+import LoginPage from './LoginPage';
 import styled from "styled-components";
 
 export const HeaderStyle = styled.div`
@@ -28,7 +29,7 @@ function Header() {
             <Link to="/movie" style={{textDecoration : 'none'}}><ListStyle>영화</ListStyle></Link>
             <Link to="/TV" style={{textDecoration : 'none'}}><ListStyle>TV프로그램</ListStyle></Link>
             <Link to="/celebirity" style={{textDecoration : 'none'}}><ListStyle>인물</ListStyle></Link>
-            <ListStyle><LoginControl/></ListStyle>
+            <ListStyle><LoginPage/></ListStyle>
         </HeaderStyle>
         </header>
     )

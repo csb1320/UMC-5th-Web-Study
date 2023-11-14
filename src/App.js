@@ -6,6 +6,8 @@ import NotFound from "./pages/NotFound";
 import TV from "./pages/TV";
 import Header from "./Components/Header";
 import MovieDetail from "./pages/MovieDetail";
+import Login from "./pages/Login";
+import TvDetail from "./pages/TvDetail";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
           <Route path="/person" element={<Celebirity />} />
           <Route path="/movie" element={<Movies />} />
           <Route path="/tv" element={<TV />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/tv/:name" element={<TvDetail />} />
           <Route path="/movie/:title" element={<MovieDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
     </Router>
   );

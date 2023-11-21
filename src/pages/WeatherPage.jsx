@@ -27,18 +27,41 @@ const WeatherPage = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        marginTop: "100px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+      }}
+    >
       <input
+        style={{
+          padding: "10px",
+          border: "4px solid black",
+          borderRadius: "20px"
+        }}
         type="text"
+        placeholder="      도시를 입력하세요"
         value={city}
         onChange={handleChange}
-        onKeyPress={(e) => e.key === 'Enter' && searchWeather()}
+        onKeyPress={(e) => e.key === "Enter" && searchWeather()}
       />
       {weatherData && (
-        <div>
-          <h2>Weather in {weatherData.name}</h2>
-          <p>Temperature: {kelvinToCelsius(weatherData.main.temp).toFixed(2)} °C</p>
-          <p>Weather: {weatherData.weather[0].description}</p>
+        <div
+          style={{
+            marginTop: "30px",
+            padding: "10px",
+            border: "2px solid black",
+            borderRadius: "20px",
+            width: "150px",
+            height: "150px",
+            textAlign: "center"
+          }}
+        >
+          <h3 style={{ textAlign: "left" }}>{weatherData.name}</h3>
+          <h1>{Math.round((weatherData.main.temp - 273.15) * 10) / 10} °C</h1>
+          <p style={{ textAlign: "right" }}>{weatherData.weather[0].description}</p>
           {/* 기타 데이터 표시 */}
         </div>
       )}

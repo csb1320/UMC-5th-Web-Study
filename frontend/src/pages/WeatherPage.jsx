@@ -11,9 +11,6 @@ const WeatherPage = () => {
     setCity(e.target.value);
   };
 
-  const kelvinToCelsius = (kelvin) => {
-    return kelvin - 273.15;
-  };
 
   const searchWeather = async () => {
     try {

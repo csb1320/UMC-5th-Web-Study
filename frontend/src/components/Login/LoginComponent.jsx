@@ -1,7 +1,7 @@
 // LoginComponent.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setId, setPw, setLoading, setError, setUserInfo } from '../redux/store';
+import { setId, setPw, setLoading, setError, setUserInfo } from '../../redux/store';
 import axios from 'axios';
 
 const LoginComponent = () => {
@@ -50,12 +50,14 @@ const LoginComponent = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <br/>
       <input
         type="password"
         placeholder="비밀번호"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <br/>
       <button onClick={handleLogin}>로그인</button>
     </div>
   );
